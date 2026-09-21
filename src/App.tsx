@@ -6,6 +6,7 @@ import { HomePage } from './pages/HomePage';
 import { CategoryPage } from './pages/CategoryPage';
 import { DetailPage } from './pages/DetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { CorridorPage } from './pages/CorridorPage';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <main className="relative z-10 flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/corridor" element={<CorridorPage />} />
             <Route path="/category/:category" element={<CategoryPage />} />
             <Route path="/microbe/:id" element={<DetailPage />} />
             <Route path="*" element={<NotFoundPage />} />
