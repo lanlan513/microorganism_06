@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import apiRoutes from './routes/index.js';
+import timelineRoutes from './routes/timeline.js';
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get('/', (_req, res) => {
   });
 });
 
+app.use('/api', timelineRoutes);
 app.use('/api', apiRoutes);
 
 app.use((_req, res) => {

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Dna, Search, Menu, X } from 'lucide-react';
+import { Home, Dna, Search, Menu, X, Clock3 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function Navbar() {
@@ -14,6 +14,7 @@ export function Navbar() {
   }, []);
 
   const navItems = [
+    { to: '/timeline', label: '35亿年时间走廊', icon: Clock3 },
     { to: '/', label: '首页大厅', icon: Home },
     { to: '/category/bacteria', label: '细菌', icon: Dna },
     { to: '/category/fungi', label: '真菌', icon: Dna },
@@ -65,7 +66,7 @@ export function Navbar() {
                 }`}
               >
                 <span className="flex items-center gap-2">
-                  {item.to === '/' && <Icon className="w-4 h-4" />}
+                  {(item.to === '/' || item.to === '/timeline') && <Icon className="w-4 h-4" />}
                   {item.label}
                 </span>
                 {isActive && (
